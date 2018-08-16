@@ -1,0 +1,103 @@
+{% extends 'doctor/base.html' %}
+
+{% block title %} PROFILE {% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/style.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/form-elements.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/loginstyle.css' %}">
+
+{% block content %}
+    {% load staticfiles %}
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text">
+                        <h1><strong>Dr.Crypto</strong> Sigh Up! </h1>
+                        <div class="description">
+                            <p>
+                                회원가입 해요 회원가입 해요
+                            </p>
+                        </div>
+                        <div class="top-big-link">
+                            <a class="btn btn-link-1 launch-modal" href="{% url 'doctor:login' %}" data-modal-id="modal-login">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#            <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">#}
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-login-label">Sign up to our site</h3>
+                <p>Enter your information :</p>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="{% url 'doctor:signup' %}">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <p>
+                            {{ field.label_tag }}<br>
+
+                        <div class="form-group">
+                        {{ field }}
+                        </div>
+                        {% if field.help_text %}
+                            <small style="color: grey">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% for error in field.errors %}
+                            <p style="color: red">{{ error }}</p>
+                        {% endfor %}
+                        </p>
+                    {% endfor %}
+                    <button type="submit">Sign up!</button>
+                    <script type="text/javascript">document.getElementById('id_username').focus();
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+    {#    <div id="content">#}
+    {##}
+    {#        <h1>New User Registration</h1>#}
+    {##}
+    {#        <form action="." method="post">{% csrf_token %}#}
+    {##}
+    {#            {% if form.errors %}#}
+    {#                <p class="errornote">Wrong! Please correct the error(s) below.</p>#}
+    {#            {% endif %}#}
+    {##}
+    {#            <p>Please enter your username etc.</p>#}
+    {##}
+    {#            <fieldset class="aligned">#}
+    {##}
+    {#                <div class="form-row">#}
+    {#                    {{ form.username.label_tag }} {{ form.username }}#}
+    {#                </div>#}
+    {#                <div class="form-row">#}
+    {#                    {{ form.name.label_tag }} {{ form.name}}#}
+    {#                </div>#}
+    {##}
+    {#                <div class="form-row">#}
+    {#                    {{ form.password1.label_tag }} {{ form.password1 }}#}
+    {#                </div>#}
+    {##}
+    {#                <div class="form-row">#}
+    {#                    {{ form.password2.label_tag }} {{ form.password2 }}#}
+    {#                </div>#}
+    {#            </fieldset>#}
+    {##}
+    {#            <div class="submit-row">#}
+    {#                <input type="submit" value="Register">#}
+    {#            </div>#}
+    {#            <script type="text/javascript">document.getElementById('id_username').focus();#}
+    {#            </script>#}
+    {#        </form>#}
+    {#    </div>#}
+{% endblock %}

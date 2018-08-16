@@ -1,0 +1,17 @@
+{% extends 'doctor/base.html' %}
+
+{% block title %}  {% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/style.css' %}">
+{% block content %}
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+
+{% endblock %}
