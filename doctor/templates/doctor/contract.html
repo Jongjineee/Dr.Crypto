@@ -1,0 +1,33 @@
+{% extends 'doctor/base.html' %}
+
+{% block title %} PROFILE {% endblock %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/style.css' %}">
+{% block content %}
+
+    <script type="text/javascript" src="{% static "web3auth/js/web3.js" %}"></script>
+    <script type="text/javascript" src="{% static "web3auth/js/web3auth.js" %}"></script>
+
+
+    <div data-web3auth-display="wallet-unavailable" style="display:none;">
+        Please install Metamask.
+    </div>
+    <div data-web3auth-display="wallet-locked" style="display:none;">
+        Your Metamask is locked. Please unlock it to continue.
+    </div>
+
+    <div data-web3auth-display="wallet-available" style="display:none;">
+        <form action="" method="POST" data-web3auth="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" data-web3auth="login-button">Log In</button>
+        </form>
+    </div>
+    <script type="text/javascript">
+        web3auth.init('{{ login_token }}');
+    </script>
+
+{% endblock %}
