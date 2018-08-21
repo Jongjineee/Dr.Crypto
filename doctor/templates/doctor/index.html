@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load staticfiles %}
     <title>Dr.CRYPTO 블록체인 의료데이터 공유 플랫폼</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel=" shortcut icon" href="{% static 'doctor/img/Drc_fav.ico'%}">
-    <link rel="icon" href="{% static 'doctor/img/Drc_fav.ico'%}">
+    <title>Dr.CRYPTO 블록체인 의료데이터 공유 플랫폼</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
     <link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type='text/css' href="{% static 'doctor/css/font-awesome.min.css' %}">
     <link rel="stylesheet" type='text/css' href="{% static 'doctor/css/style.css' %}">
 </head>
+
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 <!--banner-->
@@ -28,15 +29,27 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="{% url 'doctor:index' %}"><img src="{% static 'doctor/img/logo.png' %}" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+                        <a class="navbar-brand" href="{% url 'doctor:index' %}">
+                            <img src="{% static 'doctor/img/logo.png' %}" class="img-responsive" style="width: 140px; margin-top: -16px;">
+                        </a>
                     </div>
                     <div class="collapse navbar-collapse navbar-right" id="myNavbar">
                         <ul class="nav navbar-nav">
-                            <li class=""><a href="#">About</a></li>
-                            <li class=""><a href="#Features">Features</a></li>
-                            <li class=""><a href="#HowItWorks">How It Works</a></li>
-                            <li class=""><a href="#Value">Value</a></li>
-                            <li class=""><a href="#Team">Team</a></li>
+                            <li class="">
+                                <a href="#">About</a>
+                            </li>
+                            <li class="">
+                                <a href="#Features">Features</a>
+                            </li>
+                            <li class="">
+                                <a href="#HowItWorks">How It Works</a>
+                            </li>
+                            <li class="">
+                                <a href="#Value">Value</a>
+                            </li>
+                            <li class="">
+                                <a href="#Team">Team</a>
+                            </li>
                             {% if user.is_active %}
                                 {% for i in categories %}
                                     {% if user == i.user %}
@@ -72,8 +85,8 @@
                     </div>
                     <div class="banner-text text-center">
                         <h1>
-                            보다 편리하고 안전한 <br>
-                            블록체인 의료정보 공유 플랫폼
+                            보다 편리하고 안전한
+                            <br> 블록체인 의료정보 공유 플랫폼
                         </h1>
 
                         <a href="https://drive.google.com/open?id=1r_tmkrG-mP2KLOxV8GVW5yxmkbCu5c6W" class="btn btn-appoint" target="_blank">
@@ -106,14 +119,15 @@
             <div class="col-md-12">
                 <h2 class="ser-title title-padding">Features</h2>
                 <hr class="botm-line">
-                <br><br>
+                <br>
+                <br>
             </div>
 
         </div>
 
         <div class="row">
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/fea1.png' %}" style="display:block;  margin-left: auto;
             margin-right: auto;">
                 <p class="features-text1">병원 방문기록 검색</p>
@@ -124,7 +138,7 @@
                 </p>
             </div>
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/fea2.png' %}" style="display:block; margin-left: auto;
               margin-right: auto;">
                 <p class="features-text1">증명서 발급</p>
@@ -136,7 +150,7 @@
                 </p>
             </div>
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/fea3.png' %}" style="display:block; margin-left: auto;
               margin-right: auto;">
                 <p class="features-text1">다른 기관으로 전송</p>
@@ -154,7 +168,6 @@
 
 
 <!--/ how it works-->
-
 <section id="HowItWorks" class="section-padding">
 
     <div class="container">
@@ -162,7 +175,8 @@
             <div class="col-md-12">
                 <h2 class="ser-title">How It Works</h2>
                 <hr class="botm-line-hiw">
-                <br><br>
+                <br>
+                <br>
             </div>
             <div class="container">
                 <ul class="timeline">
@@ -286,14 +300,15 @@
             <div class="col-md-12">
                 <h2 class="ser-title title-padding">Value</h2>
                 <hr class="botm-line">
-                <br><br>
+                <br>
+                <br>
             </div>
 
         </div>
 
         <div class="row">
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/access.png' %}" style="display:block; margin-left: auto;
           margin-right: auto;">
                 <p class="features-text1">접근성</p>
@@ -305,7 +320,7 @@
                 </p>
             </div>
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/patient.png' %}" style="display:block; margin-left: auto;
             margin-right: auto;">
                 <p class="features-text1">효율성</p>
@@ -317,7 +332,7 @@
                 </p>
             </div>
 
-            <div class="col-md-4 col-sm-4" >
+            <div class="col-md-4 col-sm-4">
                 <img src="{% static 'doctor/img/security.png' %}" style="display:block; margin-left: auto;
             margin-right: auto;">
                 <p class="features-text1">보안성</p>
@@ -340,7 +355,9 @@
             <div class="col-md-12">
                 <h2 class="ser-title title-padding">Team</h2>
                 <hr class="botm-line">
-                <br><br><br>
+                <br>
+                <br>
+                <br>
             </div>
             <div class="col-md-1 col-sm-1">
             </div>
@@ -350,23 +367,6 @@
                     <div class="caption">
                         <h3>성경민</h3>
                         <p>Software Engineer</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -376,23 +376,6 @@
                     <div class="caption">
                         <h3>오성원</h3>
                         <p>UI/UX Designer</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -402,23 +385,6 @@
                     <div class="caption">
                         <h3>박성준</h3>
                         <p>Software Engineer</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -428,23 +394,6 @@
                     <div class="caption">
                         <h3>최수호</h3>
                         <p>UI/UX Designer</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -455,23 +404,6 @@
                     <div class="caption">
                         <h3>이종진</h3>
                         <p>Software Engineer</p>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -481,61 +413,6 @@
     </div>
 </section>
 <!--/ about us-->
-
-<!-- 
-  <section id="contact" class="section-padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10">
-          <h2 class="ser-title">Contact us</h2>
-          <hr class="botm-line">
-        </div>
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8 col-sm-8 marb20">
-          <div class="contact-info">
-            <h3 class="cnt-ttl">문의사항이 있으시면 남겨주세요</h3>
-            <div class="space"></div>
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control br-radius-zero" id="name" placeholder="Your Name" data-rule="minlen:4"
-                  data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control br-radius-zero" name="email" id="email" placeholder="Your Email" data-rule="email"
-                  data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control br-radius-zero" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4"
-                  data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control br-radius-zero" name="message" rows="5" data-rule="required" data-msg="Please write something for us"
-                  placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-
-              <div class="form-action">
-                <button type="submit" class="btn btn-form">Send Message</button>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-md-2"></div>
-
-      </div>
-    </div>
-    </div>
-  </section>
--->
-
 
 <!--footer-->
 <footer id="footer">
@@ -548,8 +425,9 @@
                     </div>
                     <div class="info-sec">
                         <p>블록체인 기반 개인 의료정보 공유 플랫폼</p>
-                        경기 성남시 분당구 판교로289번길 20,<br>
-                        스타트업캠퍼스 4층 DIGITAL LAB <br>
+                        경기 성남시 분당구 판교로289번길 20,
+                        <br> 스타트업캠퍼스 4층 DIGITAL LAB
+                        <br>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 marb20">
@@ -557,10 +435,8 @@
                         <h4 class="white no-padding">Sponsored By</h4>
                     </div>
                     <div class="info-sec">
-                        TalentX <br>
-                        STARTUP CAMPUS
-                        </li>
-                        </ul>
+                        TalentX
+                        <br> STARTUP CAMPUS
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-4 marb20">
@@ -568,9 +444,10 @@
                         <h4 class="white no-padding">Contact Us</h4>
                     </div>
                     <div class="info-sec">
-                        Email ) TalentX083@gmail.com <br>
-                        Tel ) 010-7237-2430 <br>
-                        <p>Facebook )  https://www.facebook.com/Dr-CRYPTO-594209154309885/</p>
+                        Email ) TalentX083@gmail.com
+                        <br> Tel ) 010-7237-2430
+                        <br>
+                        <p>Facebook ) https://www.facebook.com/Dr-CRYPTO-594209154309885/</p>
 
                     </div>
                 </div>

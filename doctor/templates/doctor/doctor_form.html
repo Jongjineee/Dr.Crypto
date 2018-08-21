@@ -3,137 +3,195 @@
 {% block title %} PROFILE {% endblock %}
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
-<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
 <link rel="stylesheet" type='text/css' href="{% static 'doctor/css/font-awesome.min.css' %}">
 <link rel="stylesheet" type='text/css' href="{% static 'doctor/css/style.css' %}">
+<link rel="stylesheet" type='text/css' href="{% static 'doctor/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
 {% block content %}
 
-    <h1>진단서 보내기!</h1>
-    <form>
-        <table>
-            <tbody>
-            <tr>
-                <th>
-                    ID
-                </th>
-                <td>
-                    {{ id }}
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    이름
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    성별
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    나이
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    주소
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    병명
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    소견
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    비고
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    발행일
-                </th>
-                <td>
-                    <input>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    의료 기관명
-                </th>
-                <td>
-                    <p>{{ medical_name }}</p>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    주소 및 명칭
-                </th>
-                <td>
-                    <p>{{ address }}</p>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    전화번호
-                </th>
-                <td>
-                    <p>{{ phone_number }}</p>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    의사 면허번호
-                </th>
-                <td>
-                    <p>{{ license_number }}</p>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    의사 이름
-                </th>
-                <td>
-                    <p>{{ name }}</p>
-                </td>
-            </tr>
+    <div class="container">
+        <form class="well form-horizontal" id="contact_form">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">ID</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <h5>{{ id }}</h5>
+                        </div>
+                    </div>
+                </div>
 
-            </tbody>
-        </table>
-        <button type="submit" name="" value="">보내기!</button>
-    </form>
+                <!-- Text input-->
 
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >이름</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                            <input name="name" placeholder="이름" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >나이</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="age" placeholder="나이" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >주소</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="patientAddress" placeholder="주소" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" >병명</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="diseaseName" placeholder="병명" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">소견</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="doctorOpinion" placeholder="소견" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">비고</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="note" placeholder="비고" class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">발행일</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                            <input name="dayOfIssue" placeholder="발행일, '-'을 넣어주세요 " class="form-control"  type="text">
+                        </div>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label">의료 기관명</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <h5 id="medicalName">{{ medicalName }}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">전화번호</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <h5 id="phoneNumber">{{ phoneNumber }}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">의사 면허번호</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <h5 id="licenseNumber">{{ licenseNumber }}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">의사 이름</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <h5 id="doctorName">{{ doctorName }}</h5>
+                        </div>
+                    </div>
+                </div>
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button id="createPost" onclick="window.createPost();" type="button" class="btn btn-info" >Send <span class="glyphicon glyphicon-send"></span></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 
+    </div><!-- /.container -->
+    <script src="{% static 'doctor/js/web3.js' %}" type="text/javascript" ></script>
+    <script src="{% static 'doctor/js/create.js' %}" type="text/javascript" ></script>
     <script src="{% static 'doctor/js/jquery.min.js' %}" type="text/javascript" ></script>
     <script src="{% static 'doctor/js/jquery.easing.min.js' %}" type="text/javascript" ></script>
     <script src="{% static 'doctor/js/bootstrap.min.js' %}" type="text/javascript" ></script>
-    <script src="{% static 'doctor/js/custom.js' %}" type="text/javascript" ></script>
+{#    <script src="{% static 'doctor/js/custom.js' %}" type="text/javascript" ></script>#}
+    <script>
+
+        function createPost() {
+
+            const name = document.getElementsByName("name")[0].value;
+            const age = document.getElementsByName("age")[0].value;
+            const patientAddress = document.getElementsByName("patientAddress")[0].value;
+            const diseaseName = document.getElementsByName("diseaseName")[0].value;
+            const doctorOpinion = document.getElementsByName("doctorOpinion")[0].value;
+            const note = document.getElementsByName("note")[0].value;
+            const dayOfIssue = document.getElementsByName("dayOfIssue")[0].value;
+            var medicalName = "{{ medicalName }}";
+            var phoneNumber = "{{ phoneNumber }}";
+            var licenseNumber = "{{ licenseNumber }}";
+            var doctorName = "{{ doctorName }}";
+
+
+            abi = [{"constant": false, "inputs": [{"name": "index", "type": "uint256"}, {"name": "patientAddress", "type": "address"}, {"name": "diseaseName", "type": "string"}, {"name": "doctorOpinion", "type": "string"}, {"name": "note", "type": "string"}, {"name": "hospitalName", "type": "string"}, {"name": "hospitalPhoneNumber", "type": "string"}, {"name": "doctorLisenceNumber", "type": "string"}, {"name": "doctorName", "type": "string"}], "name": "appendMedicalRecord", "outputs": [{"name": "success", "type": "bool"}], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "sender", "type": "address"}, {"indexed": false, "name": "patientAddress", "type": "address"}, {"indexed": false, "name": "index", "type": "uint256"}], "name": "LogPatient", "type": "event"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"constant": true, "inputs": [{"name": "", "type": "address"}], "name": "addressStructs", "outputs": [{"name": "index", "type": "uint256"}, {"name": "isAddress", "type": "bool"}], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "fetch", "type": "address"}, {"name": "index", "type": "uint256"}], "name": "getHospitalStruct", "outputs": [{"name": "", "type": "string"}, {"name": "", "type": "string"}, {"name": "", "type": "string"}, {"name": "", "type": "string"}], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "patientAddress", "type": "address"}], "name": "getMedicalRecordCount", "outputs": [{"name": "count", "type": "uint256"}], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "fetch", "type": "address"}, {"name": "index", "type": "uint256"}], "name": "getUserMedicalStruct", "outputs": [{"name": "", "type": "uint256"}, {"name": "", "type": "bool"}, {"name": "", "type": "string"}, {"name": "", "type": "string"}, {"name": "", "type": "string"}], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "token", "outputs": [{"name": "", "type": "address"}], "payable": false, "stateMutability": "view", "type": "function"}];
+
+            // web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+            if (window.web3) {
+                // web3가 정의되어 있다면
+                this.web3Provider = window.web3.currentProvider;
+                // web3Provider를 window.web3.currentProvier로 해라.
+                // 사용자 브라우저에 메타마스크가 깔려있거나, 다른 지잡 확장 프로그램, 미스트 브라우저(이더리움과 소통하기 위해 만들어진 브라우저를 사용하고 있는지)
+                // 메타마스크를 설치하면 브라우저에 자동으로 web3 인젝트
+            } else {
+                // 아닐 경우에는
+                this.web3Provider = new Web3.providers.HttpProvider(
+                    "http://localhost:8545"
+                ); // 직접 HttpProvider로 Provier를 설정한다. 로컬에서 full node를 돌리고 있을때 보통 8545 포트
+            }
+
+            window.web3 = new Web3(this.web3Provider);
+
+            const contract = window.web3.eth.contract(abi);
+            window.drc = contract.at("0xb4fac244f2cc6761c2809551ae0f88286d66e698");
+            window.web3.eth.defaultAccount = window.web3.eth.accounts[0];
+
+            window.drc.appendMedicalRecord("1",
+                "0x8eb78ef217596fb5b9b94fb88add9093c925b85e",
+                diseaseName.toString(),
+                doctorOpinion.toString(),
+                note.toString(),
+                dayOfIssue.toString(),
+                medicalName,
+                phoneNumber,
+                licenseNumber,
+                doctorName, function(error, result){
+                    if(!error)
+                        console.log(result);
+                    else
+                        console.error(error);
+                })
+        }
+    </script>
 
 {% endblock %}

@@ -41,6 +41,7 @@ class Profile(models.Model):
     wallet_address = models.CharField(max_length=50, blank=True)
     image = models.ImageField(blank=True)
 
+
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
