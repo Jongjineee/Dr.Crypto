@@ -32,8 +32,7 @@ def profile(request, pk):
 	categories = Category.objects.filter(sort="DOCTOR")
 	profile = Profile.objects.filter(user=user)
 	user = request.user
-	context = {'user': user, 'profile': profile}
-
+	context = {'user': user, 'profile': profile, 'categories': categories}
 	return render(request, 'doctor/doctor_Account.html', context)
 
 

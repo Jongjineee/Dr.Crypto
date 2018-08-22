@@ -118,6 +118,7 @@
                 <h5 class="mt-20 font-grey">{{ user }}</h5>
                 <h5>{{ user.profile.wallet_address }}</h5>
             </div>
+
             <a href="{% url 'doctor:profile_edit' user.pk %}">
                 <button type="button" class="btn btn-info">Edit</button>
             </a>
