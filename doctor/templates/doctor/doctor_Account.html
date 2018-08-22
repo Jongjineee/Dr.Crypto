@@ -32,6 +32,7 @@
 
 
     <style>
+
         @media (max-width: 480px) {
             .hidden-su-xs {
                 display: none !important;
@@ -43,6 +44,7 @@
                 display: none;
             }
         }
+
     </style>
 
 </head>
@@ -101,7 +103,7 @@
 
 
 <section id="myAccount" class="section padding">
-    <div class="container" style="height: 65px; margin-top: 50px;">
+    <div class="container" style="height: 65px; padding-top: 30px;">
         <div class="col-md-3 col-sm-4">
             {% if user.profile.image %}
                 <img class="img-circle" src="{{ user.profile.image.url }}" width="200" height="200"> <br>
@@ -110,7 +112,7 @@
             {% endif %}
         </div>
 
-        <div class="col-md-7 col-xs-12">
+        <div class="col-md-7 col-xs-12" style="margin-top:50px;">
             <div class="info-wrap">
                 <h1>{{ user.profile.name }}</h1>
                 <h5 class="mt-20 font-grey">{{ user }}</h5>
@@ -119,10 +121,16 @@
             <a href="{% url 'doctor:profile_edit' user.pk %}">
                 <button type="button" class="btn btn-info">Edit</button>
             </a>
+            <a href="{% url 'doctor:doctor_certification' user.pk %}">
+                <button type="button" class="btn btn-info" >Doctor</button>
+            </a>
+            <a href="{% url 'doctor:enterprise_certification' user.pk %}">
+                <button type="button" class="btn btn-info" >Enterprise</button>
+            </a>
         </div>
     </div>
 
-    <div class="profile container" style="margin-top: 50px">
+    <div class="profile container" style="margin-top: 200px">
         <div class="row">
             <div>
                 <div class="profile-body">
