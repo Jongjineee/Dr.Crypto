@@ -194,7 +194,7 @@
             window.web3 = new Web3(this.web3Provider);
 
             const contract = window.web3.eth.contract(abi);
-            window.drc = contract.at("0xe925b68b019c3367acef2925837c41ae11784ecd");
+            window.drc = contract.at("0x0234ca218c4af802072950dffb8680a29922f3e7");
             window.web3.eth.defaultAccount = window.web3.eth.accounts[0];
 
             window.drc.appendMedicalRecord(
@@ -210,19 +210,19 @@
                 timestamp.toString(), function(error, result){
                     if(!error) {
                         console.log(result);
-                        var con_test = confirm("진단서 생성 완료");
+                        var con_test = confirm("진료 정보가 저장되었습니다.");
                         if(con_test == true){
-                            location.href = "{% url 'doctor:index' %}";
+                            location.href = "{% url "doctor:index" %}"
                         }
                         else{
-                            location.href = "{% url 'doctor:index' %}";
+                            location.href="{% url "doctor:index" %}"
                         }
                     }
                     else{
                         console.error(error);
                     }
-                    }
-                )
+                }
+            )
         }
     </script>
 

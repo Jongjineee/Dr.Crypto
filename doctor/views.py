@@ -1,15 +1,13 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, render_to_response
 from django.http import HttpResponse
-from django.views.generic import TemplateView
 from .models import Category, Doctor, Profile
-from django.contrib.auth import login, authenticate, logout as django_logout
 from .forms import SignupForm, DoctorForm, LoginForm, EnterpriseForm, EditProfileForm
 from django.conf import settings
-import json
-from django.core.serializers.json import DjangoJSONEncoder
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout as django_logout
 from django.contrib import messages
+from django.template import RequestContext
 ###############################################
 
 # Create your views here.
@@ -72,7 +70,6 @@ def signup(request):
 		'categories': categories,
 		'user': user
 	})
-
 
 
 def signin(request):
@@ -159,6 +156,33 @@ def doctor_form(request, pk):
 		'categories': categories
 	}
 	return render(request, 'doctor/doctor_form.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
