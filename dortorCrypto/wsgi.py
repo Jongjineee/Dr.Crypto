@@ -1,5 +1,5 @@
 """
-WSGI config for blockchain_project project.
+WSGI config for dortorCrypto project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blockchain_project.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dortorCrypto.settings')
 
 application = get_wsgi_application()
