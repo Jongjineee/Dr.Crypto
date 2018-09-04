@@ -2,7 +2,7 @@
 보다 편리하고 안전한 
 블록체인 의료정보 공유 플랫폼
 
-page : <www.drcrypto.net>
+page : www.drcrypto.net
 
 ## # Doctorcrypto page
 
